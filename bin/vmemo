@@ -1,0 +1,22 @@
+#!/bin/sh
+
+DIFF=$1
+if [ -z "$DIFF"  ]; then
+  DIFF='+0'
+fi
+DIFF=$DIFF'd'
+
+cd "$HOME/documents/memo"
+YEAR=`date -v $DIFF +%y`
+MONTH=`date -v $DIFF +%m`
+FILE=`date -v $DIFF +%d`'.md'
+
+if [ ! -e $YEAR ]; then
+    mkdir $YEAR
+fi
+
+if [ ! -e "$YEAR/$MONTH" ]; then
+    mkdir "$YEAR/$MONTH"
+fi
+
+vim "$YEAR/$MONTH/$FILE" -c PrevimOpen
