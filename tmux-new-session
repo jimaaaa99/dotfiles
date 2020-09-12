@@ -1,0 +1,4 @@
+splitw
+splitw -h
+selectp -t 0
+resize-pane -D -t 0 10
