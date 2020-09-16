@@ -25,6 +25,7 @@ set colorcolumn=80
 set clipboard+=unnamed
 " deleteの設定の変更
 set backspace=indent,eol,start
+let mapleader="\<Space>"
 
 
 " 見た目系
@@ -172,6 +173,13 @@ highlight Pmenu ctermbg=6
 highlight PmenuSel ctermbg=3
 highlight PMenuSbar ctermbg=0
 
+" prettierの設定
+if filereadable(findfile('.prettierrc', '.;'))
+  echo "Using prettier..."
+  autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.json,*.vue PrettierAsync
+endif
+let g:prettier#autoformat = 1
+
 " プラグインのセットアップ
 " Plug ''
 call plug#begin('~/.vim/plugged')
@@ -197,4 +205,5 @@ Plug 'previm/previm'
 Plug 'posva/vim-vue'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'chr4/nginx.vim'
+Plug 'prettier/vim-prettier'
 call plug#end()
