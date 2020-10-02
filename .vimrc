@@ -102,6 +102,10 @@ set wrapscan
 " 検索語をハイライト表示
 set hlsearch
 
+" スペルチェックを有効
+set spell
+set spelllang=en,cjk
+
 " 独自のシンタックスハイライト
 autocmd BufRead,BufNewFile *.rb setfiletype ruby
 autocmd BufRead,BufNewFile Schemafile setfiletype ruby
