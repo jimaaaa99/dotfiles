@@ -25,7 +25,7 @@ set colorcolumn=80
 set clipboard+=unnamed
 " deleteの設定の変更
 set backspace=indent,eol,start
-let mapleader="\<Space>"
+let mapleader="g"
 
 
 " 見た目系
@@ -140,6 +140,9 @@ let g:extra_whitespace_ignored_filetypes = ['']
 " vim-vueの設定
 autocmd FileType vue syntax sync fromstart
 let g:ft = ''
+
+" NERDCommenterの設定
+let g:NERDSpaceDelims = 1
 function! NERDCommenter_before()
   if &ft == 'vue'
     let g:ft = 'vue'
@@ -196,7 +199,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/neocomplcache-rsense.vim'
 Plug 'alvan/vim-closetag'
 Plug 'cohama/lexima.vim'
-Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
@@ -210,4 +212,5 @@ Plug 'posva/vim-vue'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'chr4/nginx.vim'
 Plug 'prettier/vim-prettier'
+Plug 'preservim/nerdcommenter'
 call plug#end()
