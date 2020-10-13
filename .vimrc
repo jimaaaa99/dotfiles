@@ -137,12 +137,11 @@ let g:ctrlp_working_path_mode = 'a'
 " vim-trailing-whitespaceの設定
 let g:extra_whitespace_ignored_filetypes = ['']
 
-" vim-vueの設定
-autocmd FileType vue syntax sync fromstart
-let g:ft = ''
-
 " NERDCommenterの設定
 let g:NERDSpaceDelims = 1
+
+" vim-vueの設定
+let g:ft = ''
 function! NERDCommenter_before()
   if &ft == 'vue'
     let g:ft = 'vue'
@@ -197,6 +196,7 @@ Plug 'tpope/vim-rails'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/neocomplcache-rsense.vim'
+Plug 'preservim/nerdcommenter'
 Plug 'alvan/vim-closetag'
 Plug 'cohama/lexima.vim'
 Plug 'pangloss/vim-javascript'
@@ -212,5 +212,4 @@ Plug 'posva/vim-vue'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'chr4/nginx.vim'
 Plug 'prettier/vim-prettier'
-Plug 'preservim/nerdcommenter'
 call plug#end()
