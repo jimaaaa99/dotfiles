@@ -185,6 +185,7 @@ if filereadable(findfile('.prettierrc', '.;'))
   autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.json,*.vue PrettierAsync
 endif
 let g:prettier#autoformat = 1
+" au FileType plantuml command! OpenUml : !start chrome %
 
 " プラグインのセットアップ
 " Plug ''
@@ -212,4 +213,5 @@ Plug 'posva/vim-vue'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'chr4/nginx.vim'
 Plug 'prettier/vim-prettier'
+Plug 'aklt/plantuml-syntax'
 call plug#end()
