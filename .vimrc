@@ -163,7 +163,7 @@ endfunction
 
 " vim-markdownの設定
 let g:vim_markdown_folding_disabled = 1
-au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.{md,MD} set filetype=markdown
 
 " previmの設定
 let g:previm_disable_default_css = 1
@@ -214,4 +214,5 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'chr4/nginx.vim'
 Plug 'prettier/vim-prettier'
 Plug 'aklt/plantuml-syntax'
+Plug 'violetyk/iikanji-markdown.vim'
 call plug#end()
