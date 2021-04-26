@@ -214,4 +214,5 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'chr4/nginx.vim'
 Plug 'prettier/vim-prettier'
 Plug 'aklt/plantuml-syntax'
+Plug 'slim-template/vim-slim'
 call plug#end()
