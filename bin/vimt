@@ -20,4 +20,4 @@ else
 fi
 echo $SESSION_NAME
 
-tmux new-session -s `echo $SESSION_NAME` vim\; source-file ~/dotfiles/tmux-new-session
+tmux new-session -s `echo $SESSION_NAME` \; source-file ~/dotfiles/tmux-new-session
