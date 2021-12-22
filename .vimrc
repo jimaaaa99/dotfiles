@@ -163,7 +163,7 @@ endfunction
 
 " vim-markdownの設定
 let g:vim_markdown_folding_disabled = 1
-au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.{md,MD} set filetype=markdown
 
 " previmの設定
 let g:previm_disable_default_css = 1
