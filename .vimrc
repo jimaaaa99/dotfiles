@@ -175,6 +175,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#max_list = 50
 let g:neocomplete#max_keyword_width = 80
 let g:neocomplete#enable_ignore_case = 1
+highlight Normal ctermbg=none
 highlight Pmenu ctermbg=6
 highlight PmenuSel ctermbg=3
 highlight PMenuSbar ctermbg=0
