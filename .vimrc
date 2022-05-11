@@ -7,6 +7,7 @@ set fenc=utf-8
 set fencs=iso-2022-jp,euc-jp,cp932
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
+set shortmess-=S
 
 scriptencoding utf-8
 " バックアップファイルを作らない
