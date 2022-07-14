@@ -218,4 +218,6 @@ Plug 'prettier/vim-prettier'
 Plug 'aklt/plantuml-syntax'
 Plug 'slim-template/vim-slim'
 Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'kchmck/vim-coffee-script'
 call plug#end()
