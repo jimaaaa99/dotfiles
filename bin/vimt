@@ -18,6 +18,22 @@ if [ $? = 0 ]; then
 else
   SESSION_NAME=$DIR_NAME
 fi
-echo $SESSION_NAME
 
-tmux new-session -s `echo $SESSION_NAME` \; source-file ~/dotfiles/tmux-new-session
+ADD_COUNT=true
+COUNT=2
+ORGINAL_SESSION_NAME=$SESSION_NAME
+while $ADD_COUNT
+do
+  tmux ls -F '#{session_name}'
+  echo ${SESSION_NAME}
+  DUPLICATE_SESSION_EXIST=`tmux ls -F '#{session_name}' | grep ${SESSION_NAME}`
+  echo $DUPLICATE_SESSION_EXIST
+  if [$DUPLICATE_SESSION_EXIST == ""]; then
+    ADD_COUNT=false
+    echo $SESSION_NAME
+    tmux new-session -s `echo $SESSION_NAME` \; source-file ~/dotfiles/tmux-new-session
+  else
+    SESSION_NAME="${ORGINAL_SESSION_NAME}-${COUNT}"
+    COUNT=$(($COUNT+1))
+  fi
+done
