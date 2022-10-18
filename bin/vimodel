@@ -1,0 +1,7 @@
+#!/bin/sh
+MODEL_NAME=$1
+MODEL_FILE="app/models/${MODEL_NAME}.rb"
+SPEC_FILE="spec/models/${MODEL_NAME}_spec.rb"
+FACTORY_FILE="spec/factories/${MODEL_NAME}s.rb"
+
+vim -O $MODEL_FILE $SPEC_FILE $FACTORY_FILE
