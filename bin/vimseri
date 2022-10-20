@@ -1,0 +1,7 @@
+#!/bin/sh
+MODEL_NAME=$1
+DB_FILE='db/schema.rb'
+MODEL_FILE="app/models/${MODEL_NAME}.rb"
+SERIALIZER_FILE="app/serializers/${MODEL_NAME}_serializer.rb"
+
+vim -O $DB_FILE $MODEL_FILE $SERIALIZER_FILE

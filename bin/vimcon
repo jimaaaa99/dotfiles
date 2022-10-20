@@ -1,0 +1,9 @@
+#!/bin/sh
+MODEL_NAME=$1
+CONTROLLER_FILE="app/controllers/${MODEL_NAME}s_controller.rb"
+SPEC_FILE="spec/requests/${MODEL_NAME}_request_spec.rb"
+POLICY_FILE="app/policies/${MODEL_NAME}_policy.rb"
+MODEL_FILE="app/models/${MODEL_NAME}.rb"
+SERIALIZER_FILE="app/serializers/${MODEL_NAME}_request_spec.rb"
+
+vim -O $MODEL_FILE $SPEC_FILE $FACTORY_FILE
