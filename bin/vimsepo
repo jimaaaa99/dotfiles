@@ -3,5 +3,6 @@ MODEL_NAME=$1
 DB_FILE='db/schema.rb'
 MODEL_FILE="app/models/${MODEL_NAME}.rb"
 SERIALIZER_FILE="app/serializers/${MODEL_NAME}_serializer.rb"
+POLICY_FILE="app/policies/${MODEL_NAME}_policy.rb"
 
-vim -O $DB_FILE $MODEL_FILE $SERIALIZER_FILE
+vim -O $DB_FILE $MODEL_FILE $SERIALIZER_FILE $POLICY_FILE
