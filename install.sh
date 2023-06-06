@@ -14,3 +14,6 @@ TARGET_DIR="$HOME/.tmux/plugins/tpm"
 if [ ! -d $TARGET_DIR ]; then
   git clone https://github.com/tmux-plugins/tpm $TARGET_DIR
 fi
+
+mkdir ~/.zsh
+cd ~/.zsh

@@ -1,0 +1,8 @@
+source ~/.zsh/git-prompt.sh
+export PATH=$HOME/dotfiles/bin:$PATH
+
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWUPSTREAM=auto
+export PS1="%n %c$(__git_ps1) %# "
