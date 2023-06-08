@@ -184,6 +184,10 @@ endif
 let g:prettier#autoformat = 1
 " au FileType plantuml command! OpenUml : !start chrome %
 
+" F1でヘルプが開くのを無効化
+nmap <F1> <nop>
+imap <F1> <nop>
+set ttimeoutlen=10
 " プラグインのセットアップ
 " Plug ''
 call plug#begin('~/.vim/plugged')

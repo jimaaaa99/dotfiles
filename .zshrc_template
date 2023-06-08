@@ -1,8 +1,16 @@
-source ~/.zsh/git-prompt.sh
 export PATH=$HOME/dotfiles/bin:$PATH
 
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM=auto
-export PS1="%n %c$(__git_ps1) %# "
+KEYTIMEOUT=1
+
+# source ~/.zsh/git-prompt.sh
+# fpath=(~/.zsh $fpath)
+# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+# autoload -Uz compinit && compinit
+
+# GIT_PS1_SHOWDIRTYSTATE=true
+# GIT_PS1_SHOWSTASHSTATE=true
+# GIT_PS1_SHOWUNTRACKEDFILES=true
+# GIT_PS1_SHOWUPSTREAM=auto
+source ~/.zsh/git-prompt.zsh/git-prompt.zsh
+source ~/.zsh/git-prompt.zsh/examples/default.zsh
+# export PS1="%n %c$(__git_ps1) %# "
