@@ -14,3 +14,4 @@ KEYTIMEOUT=1
 source ~/.zsh/git-prompt.zsh/git-prompt.zsh
 source ~/.zsh/git-prompt.zsh/examples/default.zsh
 # export PS1="%n %c$(__git_ps1) %# "
+alias vim="nvim"

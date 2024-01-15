@@ -20,14 +20,21 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
-" 80桁目にラインを入れる
-set colorcolumn=80
+" 80桁と120目にラインを入れる
+set colorcolumn=80,120
+" autocmd! OptionSet textwidth call s:SetColorColumn()
+" function! s:SetColorColumn()
+"     if &textwidth == 0
+"         setlocal colorcolumn=80
+"     else
+"         setlocal colorcolumn=&textwidth
+"     endif
+" endfunction
 " クリップボードへのコピーを有効にする
 set clipboard+=unnamed
 " deleteの設定の変更
 set backspace=indent,eol,start
 let mapleader="g"
-
 
 " 見た目系
 " 行番号を表示
@@ -127,8 +134,24 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js,*.erb'
 let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
 
 " ctrlpの設定
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_working_path_mode = 'a'
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" let g:ctrlp_working_path_mode = 'a'
+
+" FZFの設定
+" ctrl p でFZFを起動
+noremap <silent> <C-p> :FZF<CR>
+function! FZFOpen(command_str)
+  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+    exe "normal! \<c-w>\<c-w>"
+  endif
+  exe 'normal! ' . a:command_str . "\<cr>"
+endfunction
+
+nnoremap <silent> <C-b> :call FZFOpen(':Buffers')<CR>
+nnoremap <silent> <C-g>g :call FZFOpen(':Ag')<CR>
+nnoremap <silent> <C-g>c :call FZFOpen(':Commands')<CR>
+nnoremap <silent> <C-g>l :call FZFOpen(':BLines')<CR>
+nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
 
 " vim-trailing-whitespaceの設定
 let g:extra_whitespace_ignored_filetypes = ['']
@@ -177,17 +200,18 @@ highlight PmenuSel ctermbg=3
 highlight PMenuSbar ctermbg=0
 
 " prettierの設定
-if filereadable(findfile('.prettierrc', '.;'))
-  echo "Using prettier..."
-  autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.json,*.vue PrettierAsync
-endif
-let g:prettier#autoformat = 1
+" if filereadable(findfile('.prettierrc', '.;'))
+"   echo "Using prettier..."
+"   autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.json,*.vue PrettierAsync
+" endif
+" let g:prettier#autoformat = 0
 " au FileType plantuml command! OpenUml : !start chrome %
 
 " F1でヘルプが開くのを無効化
 nmap <F1> <nop>
 imap <F1> <nop>
 set ttimeoutlen=10
+
 " プラグインのセットアップ
 " Plug ''
 call plug#begin('~/.vim/plugged')
@@ -196,7 +220,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-rails'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/neocomplcache-rsense.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'alvan/vim-closetag'
@@ -204,7 +228,8 @@ Plug 'cohama/lexima.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
+" Plug 'gpanders/editorconfig.nvim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'posva/vim-vue'
 Plug 'plasticboy/vim-markdown'
@@ -219,4 +244,10 @@ Plug 'slim-template/vim-slim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'github/copilot.vim'
+Plug 'neoclide/coc.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'jwalton512/vim-blade'
+" Plug 'Bekaboo/deadcolumn.nvim'
 call plug#end()
