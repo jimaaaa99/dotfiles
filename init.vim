@@ -61,11 +61,6 @@ nnoremap gl :+tabm
 nnoremap gh :-tabm
 "シンタックスを表示する
 syntax enable
-"カラースキームを設定
-set background=dark
-" colorscheme tender
-colorscheme solarized
-" colorscheme molokai
 
 " インサートモードでカーソルの形状変更
 let &t_SI = "\e[6 q"
@@ -199,6 +194,13 @@ highlight Pmenu ctermbg=6
 highlight PmenuSel ctermbg=3
 highlight PMenuSbar ctermbg=0
 
+"カラースキームを設定
+set background=dark
+" colorscheme tender
+" colorscheme solarized
+colorscheme NeoSolarized
+" colorscheme molokai
+
 " prettierの設定
 " if filereadable(findfile('.prettierrc', '.;'))
 "   echo "Using prettier..."
@@ -211,6 +213,9 @@ highlight PMenuSbar ctermbg=0
 nmap <F1> <nop>
 imap <F1> <nop>
 set ttimeoutlen=10
+
+" emmetの設定
+let g:user_emmet_leader_key='<C-h>'
 
 " プラグインのセットアップ
 " Plug ''
@@ -250,5 +255,20 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'mattn/emmet-vim'
+Plug 'ishan9299/nvim-solarized-lua'
+Plug 'overcache/NeoSolarized'
 " Plug 'Bekaboo/deadcolumn.nvim'
 call plug#end()
+
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"   highlight = {
+"     enable = true,
+"     disable = {
+"       'vim',
+"       'ruby',
+"     }
+"   }
+" }
+" EOF
