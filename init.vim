@@ -197,8 +197,8 @@ highlight PMenuSbar ctermbg=0
 "カラースキームを設定
 set background=dark
 " colorscheme tender
-" colorscheme solarized
-colorscheme NeoSolarized
+colorscheme solarized
+" colorscheme NeoSolarized
 " colorscheme molokai
 
 " prettierの設定
@@ -257,7 +257,7 @@ Plug 'jwalton512/vim-blade'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'mattn/emmet-vim'
 Plug 'ishan9299/nvim-solarized-lua'
-Plug 'overcache/NeoSolarized'
+Plug 'shaunsingh/solarized.nvim'
 " Plug 'Bekaboo/deadcolumn.nvim'
 call plug#end()
 
