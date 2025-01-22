@@ -64,6 +64,8 @@ syntax enable
 "カラースキームを設定
 set background=dark
 " colorscheme tender
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
 colorscheme solarized
 " colorscheme molokai
 

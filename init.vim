@@ -189,7 +189,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#max_list = 50
 let g:neocomplete#max_keyword_width = 80
 let g:neocomplete#enable_ignore_case = 1
-highlight Normal ctermbg=none
+highlight Normal ctermbg=none guibg=NONE
 highlight Pmenu ctermbg=6
 highlight PmenuSel ctermbg=3
 highlight PMenuSbar ctermbg=0
@@ -197,6 +197,10 @@ highlight PMenuSbar ctermbg=0
 "カラースキームを設定
 set background=dark
 " colorscheme tender
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight Normal guibg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+autocmd ColorScheme * highlight LineNr guibg=none
 colorscheme solarized
 " colorscheme NeoSolarized
 " colorscheme molokai
